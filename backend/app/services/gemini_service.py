@@ -70,8 +70,8 @@ def chat(message: str, conversation_history: list, recipe_context: str, system_p
             continue
 
     if recipe_context:
-        return f"⚠️ **AI Chat Notice**: ({str(last_error)}). Displaying verified recipe data:\n\n{recipe_context}"
-    return f"⚠️ **Could not connect to Gemini**: {str(last_error)}. Please check your API key in `d:\\letmecook\\.env`."
+        return f"⚠️ **AI Chat Notice**: ({str(last_error)}).\n\nHere is the verified recipe data from the kitchen database:\n\n{recipe_context}"
+    return f"⚠️ **Could not connect to Gemini**: {str(last_error)}. Please ensure your GEMINI_API_KEY is configured in your deployment settings."
 
 def identify_dish(image_base64: str) -> dict:
     client = get_client()
@@ -90,26 +90,35 @@ def identify_dish(image_base64: str) -> dict:
         temperature=0.1
     )
     
-    response = client.models.generate_content(
-        model='gemini-3.6-flash',
-        contents=[
-            types.Part.from_bytes(data=image_bytes, mime_type='image/jpeg'),
-            types.Part.from_text(text=prompt)
-        ],
-        config=config
-    )
+    IMAGE_MODELS_POOL = [
+        'gemini-3.1-flash-lite',
+        'gemini-flash-lite-latest',
+        'gemini-3.6-flash',
+        'gemini-flash-latest'
+    ]
     
     import json
-    try:
-        data = json.loads(response.text)
-        return {
-            "dish_name": data.get("dish_name", "Unknown"),
-            "confidence": float(data.get("confidence", 0)),
-            "description": data.get("description", "")
-        }
-    except Exception as e:
-        return {
-            "dish_name": "Unknown",
-            "confidence": 0.0,
-            "description": f"Failed to parse response: {str(e)}"
-        }
+    for model_name in IMAGE_MODELS_POOL:
+        try:
+            response = client.models.generate_content(
+                model=model_name,
+                contents=[
+                    types.Part.from_bytes(data=image_bytes, mime_type='image/jpeg'),
+                    types.Part.from_text(text=prompt)
+                ],
+                config=config
+            )
+            data = json.loads(response.text)
+            return {
+                "dish_name": data.get("dish_name", "Unknown"),
+                "confidence": float(data.get("confidence", 0)),
+                "description": data.get("description", "")
+            }
+        except Exception:
+            continue
+
+    return {
+        "dish_name": "Unknown",
+        "confidence": 0.0,
+        "description": "Could not identify dish due to rate limit."
+    }
