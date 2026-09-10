@@ -4,7 +4,7 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "https://letmecook-backend.onrender.com/api/:splat"
+  to = "https://letmecook-tlll.onrender.com/api/:splat"
   status = 200
   force = true
 
