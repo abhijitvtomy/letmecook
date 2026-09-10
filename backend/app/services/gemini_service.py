@@ -5,9 +5,13 @@ from google.genai import types
 from app.config import GEMINI_API_KEY
 
 def get_api_key():
-    import app.config as cfg
-    from dotenv import load_dotenv
-    load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env'), override=True)
+    key = os.getenv("GEMINI_API_KEY", "")
+    if key and key != "your_gemini_api_key_here":
+        return key
+    env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env')
+    if os.path.exists(env_path):
+        from dotenv import load_dotenv
+        load_dotenv(env_path, override=True)
     return os.getenv("GEMINI_API_KEY", "")
 
 def get_client():
@@ -21,12 +25,12 @@ def chat(message: str, conversation_history: list, recipe_context: str, system_p
     if not key or key == "your_gemini_api_key_here":
         if recipe_context:
             return (
-                "⚠️ **Gemini API Key Missing**: I found the recipe in the database, but your `GEMINI_API_KEY` is not set yet in `d:\\letmecook\\.env`.\n\n"
+                "⚠️ **Gemini API Key Missing**: I found the recipe in the database, but your `GEMINI_API_KEY` is not set yet in the environment variables.\n\n"
                 "Here is the recipe information from the kitchen database:\n\n" + recipe_context
             )
         return (
-            "⚠️ **Gemini API Key Missing**: Please set your `GEMINI_API_KEY` in `d:\\letmecook\\.env` to enable AI conversational chat. "
-            "In the meantime, you can browse and view all 10 curated recipes using the **Browse Recipes** tab at the top!"
+            "⚠️ **Gemini API Key Missing**: Please set your `GEMINI_API_KEY` environment variable in your deployment settings to enable AI conversational chat. "
+            "In the meantime, you can search and browse all 515 curated recipes using the **Browse Recipes** tab at the top!"
         )
 
     client = get_client()
