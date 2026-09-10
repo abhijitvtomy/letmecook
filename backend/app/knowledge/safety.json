@@ -1,0 +1,143 @@
+[
+    {
+        "id": "poultry",
+        "category": "poultry",
+        "title": "Poultry Safety",
+        "guidelines": [
+            "Never wash raw poultry, as it splashes bacteria around the kitchen.",
+            "Use separate cutting boards and utensils for raw poultry.",
+            "Wash hands thoroughly with soap and water after handling raw poultry.",
+            "Cook all poultry to a safe minimum internal temperature to destroy harmful bacteria."
+        ],
+        "critical_temperatures": {
+            "chicken": "165°F (74°C)",
+            "turkey": "165°F (74°C)",
+            "duck": "165°F (74°C)"
+        }
+    },
+    {
+        "id": "red_meat",
+        "category": "red_meat",
+        "title": "Red Meat Safety",
+        "guidelines": [
+            "Ground meats must be cooked to a higher temperature than whole cuts because surface bacteria is mixed throughout the meat during grinding.",
+            "Let whole cuts of meat rest for 3 minutes after cooking before carving to ensure safety and retain juices."
+        ],
+        "critical_temperatures": {
+            "ground beef/pork": "160°F (71°C)",
+            "steaks/roasts/chops": "145°F (63°C)",
+            "pork": "145°F (63°C)"
+        }
+    },
+    {
+        "id": "seafood",
+        "category": "seafood",
+        "title": "Seafood Safety",
+        "guidelines": [
+            "Buy seafood only from reputable sources.",
+            "If serving fish raw (like sushi), it must be 'sushi-grade' and previously frozen according to FDA guidelines to kill parasites.",
+            "Cook fish until it is opaque and flakes easily with a fork."
+        ],
+        "critical_temperatures": {
+            "fish": "145°F (63°C)",
+            "shellfish": "Cook until shells open; discard any that don't open."
+        }
+    },
+    {
+        "id": "eggs",
+        "category": "eggs",
+        "title": "Egg Safety",
+        "guidelines": [
+            "Keep eggs refrigerated at 40°F (4°C) or below.",
+            "Cook eggs until both the yolk and white are firm, unless using pasteurized eggs.",
+            "For recipes requiring raw or lightly cooked eggs (like mayo or Caesar dressing), use pasteurized shell eggs or pasteurized egg products."
+        ],
+        "critical_temperatures": {
+            "egg dishes/casseroles": "160°F (71°C)",
+            "eggs": "Cook until yolks and whites are firm."
+        }
+    },
+    {
+        "id": "dairy",
+        "category": "dairy",
+        "title": "Dairy Safety",
+        "guidelines": [
+            "Store dairy products at 40°F (4°C) or below.",
+            "Discard dairy that has been left at room temperature for more than 2 hours.",
+            "Use pasteurized milk and cheeses, especially for pregnant women, young children, and immunocompromised individuals."
+        ]
+    },
+    {
+        "id": "pressure_cooking",
+        "category": "pressure_cooking",
+        "title": "Pressure Cooking Safety",
+        "guidelines": [
+            "Never fill the pressure cooker more than two-thirds full. For foods that expand (rice, beans), do not fill more than half full.",
+            "Always check that the steam release valve and vent are clean and unobstructed before use.",
+            "Never force a pressure cooker open. Wait until all pressure has released naturally or via the quick release valve.",
+            "Keep hands and face away from the steam release valve when venting."
+        ]
+    },
+    {
+        "id": "deep_frying",
+        "category": "deep_frying",
+        "title": "Deep Frying Safety",
+        "guidelines": [
+            "Never overfill the pot with oil; keep it less than half full to account for bubbling up when food is added.",
+            "Ensure food is completely dry before adding to hot oil to prevent dangerous splattering.",
+            "Never leave heating oil unattended. If it smokes, turn off the heat immediately.",
+            "Keep a class K or B fire extinguisher, or a heavy metal lid nearby. Never use water on a grease fire."
+        ]
+    },
+    {
+        "id": "food_storage",
+        "category": "food_storage",
+        "title": "Food Storage Safety",
+        "guidelines": [
+            "Follow the 'Danger Zone' rule: do not leave perishable food between 40°F and 140°F (4°C - 60°C) for more than 2 hours.",
+            "Store raw meat on the bottom shelf of the refrigerator to prevent juices from dripping onto other foods.",
+            "Cool hot foods rapidly before refrigerating by dividing into smaller, shallow containers."
+        ]
+    },
+    {
+        "id": "reheating",
+        "category": "reheating",
+        "title": "Reheating Safety",
+        "guidelines": [
+            "Reheat all leftovers to 165°F (74°C) internal temperature.",
+            "Bring sauces, soups, and gravies to a rolling boil when reheating.",
+            "When microwaving, cover food and stir occasionally to eliminate cold spots where bacteria can survive."
+        ]
+    },
+    {
+        "id": "allergens",
+        "category": "allergens",
+        "title": "Allergen Management",
+        "guidelines": [
+            "Thoroughly clean and sanitize all surfaces, equipment, and hands after handling major allergens (nuts, shellfish, soy, dairy, etc.).",
+            "Be aware of hidden allergens in sauces, stocks, and condiments.",
+            "Always inform guests of potential cross-contamination if preparing allergen-free meals in a shared kitchen."
+        ]
+    },
+    {
+        "id": "cross_contamination",
+        "category": "cross_contamination",
+        "title": "Cross-Contamination Prevention",
+        "guidelines": [
+            "Use separate cutting boards (color-coded if possible) for raw meats and produce.",
+            "Never place cooked food back onto a plate that held raw meat without washing it first.",
+            "Wash hands for 20 seconds with warm water and soap after handling raw meats, taking out trash, or using the restroom."
+        ]
+    },
+    {
+        "id": "knife_safety",
+        "category": "knife_safety",
+        "title": "Knife Handling Safety",
+        "guidelines": [
+            "A sharp knife is safer than a dull knife because it requires less pressure to cut.",
+            "Always cut away from your body and keep your fingers tucked in a 'claw' shape holding the food.",
+            "Never try to catch a falling knife; step back and let it drop.",
+            "Place a damp paper towel under your cutting board to prevent it from slipping."
+        ]
+    }
+]

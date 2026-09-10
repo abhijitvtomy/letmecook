@@ -1,0 +1,550 @@
+[
+  {
+    "id": "recipe_1",
+    "name": "Chicken Biryani",
+    "aliases": ["Murgh Biryani", "Indian Chicken Rice"],
+    "cuisine": "Indian",
+    "category": "Main Course",
+    "sub_category": "Rice Dish",
+    "difficulty": "Hard",
+    "servings": 4,
+    "prep_time_minutes": 30,
+    "cook_time_minutes": 60,
+    "total_time_minutes": 90,
+    "dietary_tags": ["Gluten-Free"],
+    "ingredients": [
+      {"name": "Basmati Rice", "quantity": 2, "unit": "cups", "category": "Grains", "substitutes": ["Jasmine Rice"]},
+      {"name": "Chicken Thighs", "quantity": 1.5, "unit": "lbs", "category": "Meat", "substitutes": ["Chicken Breasts"], "prep_note": "Boneless, cut into pieces"},
+      {"name": "Yogurt", "quantity": 0.5, "unit": "cup", "category": "Dairy", "substitutes": []},
+      {"name": "Onion", "quantity": 2, "unit": "large", "category": "Produce", "substitutes": [], "prep_note": "Thinly sliced"},
+      {"name": "Biryani Masala", "quantity": 2, "unit": "tbsp", "category": "Spices", "substitutes": []}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Marination",
+        "instruction": "Mix chicken with yogurt and biryani masala.",
+        "duration_minutes": 30,
+        "techniques_used": ["marinating"],
+        "equipment": ["Mixing bowl"]
+      },
+      {
+        "step_number": 2,
+        "phase": "Cooking",
+        "instruction": "Fry the thinly sliced onions until deep golden brown.",
+        "duration_minutes": 15,
+        "heat_level": "Medium",
+        "visual_cue": "Deep golden brown, crispy edges",
+        "techniques_used": ["caramelization", "shallow_frying"],
+        "equipment": ["Pan"]
+      },
+      {
+        "step_number": 3,
+        "phase": "Cooking",
+        "instruction": "Parboil the basmati rice with whole spices until 70% cooked.",
+        "duration_minutes": 5,
+        "heat_level": "High",
+        "visual_cue": "Rice grain breaks into 2 pieces when pressed",
+        "techniques_used": ["parboiling", "simmering"],
+        "equipment": ["Large pot"]
+      },
+      {
+        "step_number": 4,
+        "phase": "Assembly",
+        "instruction": "Layer chicken, fried onions, and parboiled rice in a heavy pot. Seal tightly.",
+        "techniques_used": ["braising"],
+        "equipment": ["Dutch oven"]
+      },
+      {
+        "step_number": 5,
+        "phase": "Cooking",
+        "instruction": "Cook on very low heat to steam (Dum).",
+        "duration_minutes": 25,
+        "heat_level": "Low",
+        "techniques_used": ["steaming"],
+        "equipment": ["Dutch oven"]
+      }
+    ],
+    "techniques_referenced": ["marinating", "caramelization", "shallow_frying", "simmering", "steaming", "braising"],
+    "safety_notes": ["Ensure chicken reaches 165°F.", "Use separate boards for raw chicken."],
+    "nutrition_per_serving": {"calories": 650, "protein_g": 35, "carbs_g": 60, "fat_g": 25}
+  },
+  {
+    "id": "recipe_2",
+    "name": "Pasta Carbonara",
+    "aliases": ["Spaghetti alla Carbonara"],
+    "cuisine": "Italian",
+    "category": "Main Course",
+    "sub_category": "Pasta",
+    "difficulty": "Medium",
+    "servings": 2,
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 15,
+    "total_time_minutes": 25,
+    "dietary_tags": [],
+    "ingredients": [
+      {"name": "Spaghetti", "quantity": 8, "unit": "oz", "category": "Pasta", "substitutes": ["Rigatoni"]},
+      {"name": "Guanciale", "quantity": 4, "unit": "oz", "category": "Meat", "substitutes": ["Pancetta", "Bacon"], "prep_note": "Diced"},
+      {"name": "Eggs", "quantity": 2, "unit": "large", "category": "Dairy", "substitutes": []},
+      {"name": "Pecorino Romano", "quantity": 1, "unit": "cup", "category": "Dairy", "substitutes": ["Parmigiano-Reggiano"], "prep_note": "Grated"},
+      {"name": "Black Pepper", "quantity": 1, "unit": "tsp", "category": "Spices", "substitutes": []}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Prep",
+        "instruction": "Whisk eggs and grated Pecorino together in a bowl until it forms a paste.",
+        "techniques_used": ["emulsification"],
+        "equipment": ["Bowl", "Whisk"]
+      },
+      {
+        "step_number": 2,
+        "phase": "Cooking",
+        "instruction": "Cook guanciale in a cold skillet slowly until crispy.",
+        "duration_minutes": 8,
+        "heat_level": "Medium-Low",
+        "visual_cue": "Fat rendered, crispy golden meat",
+        "techniques_used": ["rendering", "sauteing"],
+        "equipment": ["Skillet"]
+      },
+      {
+        "step_number": 3,
+        "phase": "Cooking",
+        "instruction": "Boil spaghetti in heavily salted water until al dente.",
+        "duration_minutes": 10,
+        "heat_level": "High",
+        "visual_cue": "Firm to the bite",
+        "techniques_used": ["boiling"],
+        "equipment": ["Pot"]
+      },
+      {
+        "step_number": 4,
+        "phase": "Assembly",
+        "instruction": "Transfer pasta to the skillet with guanciale (off heat), toss well.",
+        "equipment": ["Skillet"]
+      },
+      {
+        "step_number": 5,
+        "phase": "Sauce",
+        "instruction": "Quickly stir in egg mixture and some pasta water to create a creamy sauce without scrambling.",
+        "techniques_used": ["tempering", "emulsification"],
+        "common_mistakes": ["Scrambling the eggs due to high heat"],
+        "equipment": ["Skillet"]
+      }
+    ],
+    "techniques_referenced": ["sauteing", "tempering", "emulsification"],
+    "safety_notes": ["Eggs are gently cooked, immune-compromised should use pasteurized eggs."],
+    "nutrition_per_serving": {"calories": 750, "protein_g": 30, "carbs_g": 85, "fat_g": 35}
+  },
+  {
+    "id": "recipe_3",
+    "name": "Pad Thai",
+    "aliases": ["Phad Thai"],
+    "cuisine": "Thai",
+    "category": "Main Course",
+    "sub_category": "Noodles",
+    "difficulty": "Medium",
+    "servings": 2,
+    "prep_time_minutes": 20,
+    "cook_time_minutes": 10,
+    "total_time_minutes": 30,
+    "dietary_tags": ["Gluten-Free"],
+    "ingredients": [
+      {"name": "Rice Noodles", "quantity": 8, "unit": "oz", "category": "Pasta", "substitutes": []},
+      {"name": "Shrimp", "quantity": 8, "unit": "oz", "category": "Seafood", "substitutes": ["Chicken", "Tofu"]},
+      {"name": "Eggs", "quantity": 2, "unit": "large", "category": "Dairy", "substitutes": []},
+      {"name": "Tamarind Paste", "quantity": 2, "unit": "tbsp", "category": "Pantry", "substitutes": []},
+      {"name": "Fish Sauce", "quantity": 2, "unit": "tbsp", "category": "Pantry", "substitutes": ["Soy sauce"]},
+      {"name": "Palm Sugar", "quantity": 1, "unit": "tbsp", "category": "Pantry", "substitutes": ["Brown sugar"]},
+      {"name": "Peanuts", "quantity": 0.25, "unit": "cup", "category": "Nuts", "substitutes": [], "prep_note": "Crushed"}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Prep",
+        "instruction": "Soak rice noodles in warm water until pliable.",
+        "duration_minutes": 15
+      },
+      {
+        "step_number": 2,
+        "phase": "Sauce",
+        "instruction": "Mix tamarind, fish sauce, and palm sugar.",
+        "techniques_used": ["emulsification"]
+      },
+      {
+        "step_number": 3,
+        "phase": "Cooking",
+        "instruction": "Stir-fry shrimp until pink.",
+        "duration_minutes": 3,
+        "heat_level": "High",
+        "techniques_used": ["stir_frying"]
+      },
+      {
+        "step_number": 4,
+        "phase": "Cooking",
+        "instruction": "Push shrimp aside, scramble eggs in the pan.",
+        "duration_minutes": 2,
+        "techniques_used": ["stir_frying"]
+      },
+      {
+        "step_number": 5,
+        "phase": "Cooking",
+        "instruction": "Add noodles and sauce, toss until noodles are cooked and sauce is absorbed.",
+        "duration_minutes": 3,
+        "techniques_used": ["stir_frying"]
+      }
+    ],
+    "techniques_referenced": ["stir_frying", "sauteing"],
+    "safety_notes": ["Ensure shrimp is cooked thoroughly.", "Contains peanuts - allergen warning."],
+    "nutrition_per_serving": {"calories": 600, "protein_g": 30, "carbs_g": 80, "fat_g": 18}
+  },
+  {
+    "id": "recipe_4",
+    "name": "Butter Chicken",
+    "aliases": ["Murgh Makhani"],
+    "cuisine": "Indian",
+    "category": "Main Course",
+    "sub_category": "Curry",
+    "difficulty": "Medium",
+    "servings": 4,
+    "prep_time_minutes": 20,
+    "cook_time_minutes": 40,
+    "total_time_minutes": 60,
+    "dietary_tags": [],
+    "ingredients": [
+      {"name": "Chicken Breasts", "quantity": 1.5, "unit": "lbs", "category": "Meat", "substitutes": ["Chicken Thighs"]},
+      {"name": "Yogurt", "quantity": 0.5, "unit": "cup", "category": "Dairy", "substitutes": []},
+      {"name": "Tomato Puree", "quantity": 1.5, "unit": "cups", "category": "Pantry", "substitutes": []},
+      {"name": "Heavy Cream", "quantity": 0.5, "unit": "cup", "category": "Dairy", "substitutes": ["Cashew cream"]},
+      {"name": "Butter", "quantity": 3, "unit": "tbsp", "category": "Dairy", "substitutes": []},
+      {"name": "Garam Masala", "quantity": 1, "unit": "tbsp", "category": "Spices", "substitutes": []}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Marination",
+        "instruction": "Marinate chicken in yogurt and spices for at least 30 mins.",
+        "techniques_used": ["marinating"]
+      },
+      {
+        "step_number": 2,
+        "phase": "Cooking",
+        "instruction": "Sear the chicken pieces in a hot pan until browned.",
+        "duration_minutes": 5,
+        "heat_level": "High",
+        "techniques_used": ["searing"]
+      },
+      {
+        "step_number": 3,
+        "phase": "Sauce",
+        "instruction": "Melt butter, add tomato puree and spices. Simmer until oil separates.",
+        "duration_minutes": 20,
+        "heat_level": "Medium-Low",
+        "techniques_used": ["simmering", "reduction"]
+      },
+      {
+        "step_number": 4,
+        "phase": "Finishing",
+        "instruction": "Add chicken back to the sauce, stir in cream and simmer gently.",
+        "duration_minutes": 10,
+        "techniques_used": ["simmering"]
+      }
+    ],
+    "techniques_referenced": ["marinating", "searing", "simmering", "reduction"],
+    "safety_notes": ["Ensure chicken reaches 165°F."],
+    "nutrition_per_serving": {"calories": 550, "protein_g": 40, "carbs_g": 15, "fat_g": 35}
+  },
+  {
+    "id": "recipe_5",
+    "name": "Chocolate Lava Cake",
+    "aliases": ["Molten Chocolate Cake"],
+    "cuisine": "Dessert",
+    "category": "Dessert",
+    "sub_category": "Cake",
+    "difficulty": "Medium",
+    "servings": 4,
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 12,
+    "total_time_minutes": 27,
+    "dietary_tags": ["Vegetarian"],
+    "ingredients": [
+      {"name": "Dark Chocolate", "quantity": 6, "unit": "oz", "category": "Baking", "substitutes": []},
+      {"name": "Butter", "quantity": 0.5, "unit": "cup", "category": "Dairy", "substitutes": []},
+      {"name": "Eggs", "quantity": 4, "unit": "large", "category": "Dairy", "substitutes": []},
+      {"name": "Sugar", "quantity": 0.5, "unit": "cup", "category": "Baking", "substitutes": []},
+      {"name": "Flour", "quantity": 2, "unit": "tbsp", "category": "Baking", "substitutes": []}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Prep",
+        "instruction": "Melt chocolate and butter over a double boiler.",
+        "techniques_used": ["double_boiling"]
+      },
+      {
+        "step_number": 2,
+        "phase": "Prep",
+        "instruction": "Beat eggs and sugar until thick and pale.",
+        "techniques_used": ["creaming"]
+      },
+      {
+        "step_number": 3,
+        "phase": "Mixing",
+        "instruction": "Fold melted chocolate into the egg mixture, then sift and fold in flour.",
+        "techniques_used": ["folding"]
+      },
+      {
+        "step_number": 4,
+        "phase": "Baking",
+        "instruction": "Pour into buttered ramekins and bake at 425°F.",
+        "duration_minutes": 12,
+        "heat_level": "425°F",
+        "visual_cue": "Edges are firm but center is still wobbly",
+        "techniques_used": ["baking"]
+      }
+    ],
+    "techniques_referenced": ["double_boiling", "creaming", "folding", "baking"],
+    "safety_notes": ["Center is raw egg batter; not recommended for immune-compromised."],
+    "nutrition_per_serving": {"calories": 480, "protein_g": 8, "carbs_g": 35, "fat_g": 38}
+  },
+  {
+    "id": "recipe_6",
+    "name": "Caesar Salad",
+    "aliases": [],
+    "cuisine": "American",
+    "category": "Salad",
+    "sub_category": "Side Dish",
+    "difficulty": "Easy",
+    "servings": 2,
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 0,
+    "total_time_minutes": 15,
+    "dietary_tags": [],
+    "ingredients": [
+      {"name": "Romaine Lettuce", "quantity": 1, "unit": "head", "category": "Produce", "substitutes": []},
+      {"name": "Parmesan Cheese", "quantity": 0.25, "unit": "cup", "category": "Dairy", "substitutes": []},
+      {"name": "Croutons", "quantity": 1, "unit": "cup", "category": "Pantry", "substitutes": []},
+      {"name": "Egg Yolk", "quantity": 1, "unit": "large", "category": "Dairy", "substitutes": ["Mayo"]},
+      {"name": "Anchovies", "quantity": 2, "unit": "fillets", "category": "Seafood", "substitutes": []},
+      {"name": "Olive Oil", "quantity": 0.3, "unit": "cup", "category": "Pantry", "substitutes": []}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Dressing",
+        "instruction": "Mash anchovies with garlic and salt into a paste.",
+        "techniques_used": []
+      },
+      {
+        "step_number": 2,
+        "phase": "Dressing",
+        "instruction": "Whisk in egg yolk and lemon juice, then slowly stream in olive oil to emulsify.",
+        "techniques_used": ["emulsification"]
+      },
+      {
+        "step_number": 3,
+        "phase": "Assembly",
+        "instruction": "Toss lettuce with dressing, top with croutons and parmesan."
+      }
+    ],
+    "techniques_referenced": ["emulsification"],
+    "safety_notes": ["Contains raw egg yolk and fish."],
+    "nutrition_per_serving": {"calories": 350, "protein_g": 10, "carbs_g": 15, "fat_g": 28}
+  },
+  {
+    "id": "recipe_7",
+    "name": "California Roll",
+    "aliases": ["Maki Roll"],
+    "cuisine": "Japanese",
+    "category": "Main Course",
+    "sub_category": "Sushi",
+    "difficulty": "Hard",
+    "servings": 2,
+    "prep_time_minutes": 45,
+    "cook_time_minutes": 20,
+    "total_time_minutes": 65,
+    "dietary_tags": ["Pescatarian"],
+    "ingredients": [
+      {"name": "Sushi Rice", "quantity": 1, "unit": "cup", "category": "Grains", "substitutes": []},
+      {"name": "Nori", "quantity": 2, "unit": "sheets", "category": "Pantry", "substitutes": []},
+      {"name": "Imitation Crab", "quantity": 4, "unit": "oz", "category": "Seafood", "substitutes": ["Real crab"]},
+      {"name": "Avocado", "quantity": 0.5, "unit": "medium", "category": "Produce", "substitutes": []},
+      {"name": "Cucumber", "quantity": 0.5, "unit": "medium", "category": "Produce", "substitutes": []}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Prep",
+        "instruction": "Cook sushi rice, then fold in sushi vinegar and fan to cool.",
+        "techniques_used": ["folding", "simmering"]
+      },
+      {
+        "step_number": 2,
+        "phase": "Assembly",
+        "instruction": "Place nori on a bamboo mat, spread rice evenly, flip over.",
+        "techniques_used": []
+      },
+      {
+        "step_number": 3,
+        "phase": "Assembly",
+        "instruction": "Arrange crab, avocado, and cucumber horizontally.",
+        "techniques_used": []
+      },
+      {
+        "step_number": 4,
+        "phase": "Assembly",
+        "instruction": "Roll tightly using the bamboo mat, cut into 8 pieces.",
+        "techniques_used": []
+      }
+    ],
+    "techniques_referenced": ["folding", "simmering"],
+    "safety_notes": ["Ensure seafood is handled properly."],
+    "nutrition_per_serving": {"calories": 300, "protein_g": 8, "carbs_g": 55, "fat_g": 5}
+  },
+  {
+    "id": "recipe_8",
+    "name": "Guacamole",
+    "aliases": ["Guac"],
+    "cuisine": "Mexican",
+    "category": "Appetizer",
+    "sub_category": "Dip",
+    "difficulty": "Easy",
+    "servings": 4,
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 0,
+    "total_time_minutes": 10,
+    "dietary_tags": ["Vegan", "Gluten-Free"],
+    "ingredients": [
+      {"name": "Avocado", "quantity": 3, "unit": "medium", "category": "Produce", "substitutes": []},
+      {"name": "Lime", "quantity": 1, "unit": "whole", "category": "Produce", "substitutes": []},
+      {"name": "Cilantro", "quantity": 0.25, "unit": "cup", "category": "Produce", "substitutes": []},
+      {"name": "Jalapeno", "quantity": 1, "unit": "small", "category": "Produce", "substitutes": []},
+      {"name": "Red Onion", "quantity": 0.25, "unit": "cup", "category": "Produce", "substitutes": []}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Prep",
+        "instruction": "Mash avocados with lime juice and salt.",
+        "techniques_used": []
+      },
+      {
+        "step_number": 2,
+        "phase": "Prep",
+        "instruction": "Stir in finely diced onion, jalapeno, and chopped cilantro.",
+        "techniques_used": []
+      }
+    ],
+    "techniques_referenced": [],
+    "safety_notes": ["Wash hands thoroughly after handling jalapeno."],
+    "nutrition_per_serving": {"calories": 180, "protein_g": 2, "carbs_g": 10, "fat_g": 16}
+  },
+  {
+    "id": "recipe_9",
+    "name": "French Onion Soup",
+    "aliases": ["Soupe à l'Oignon"],
+    "cuisine": "French",
+    "category": "Soup",
+    "sub_category": "Starter",
+    "difficulty": "Medium",
+    "servings": 4,
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 60,
+    "total_time_minutes": 75,
+    "dietary_tags": [],
+    "ingredients": [
+      {"name": "Yellow Onions", "quantity": 5, "unit": "large", "category": "Produce", "substitutes": []},
+      {"name": "Butter", "quantity": 4, "unit": "tbsp", "category": "Dairy", "substitutes": []},
+      {"name": "Beef Broth", "quantity": 6, "unit": "cups", "category": "Pantry", "substitutes": []},
+      {"name": "Baguette", "quantity": 4, "unit": "slices", "category": "Bakery", "substitutes": []},
+      {"name": "Gruyere Cheese", "quantity": 1, "unit": "cup", "category": "Dairy", "substitutes": ["Swiss Cheese"]}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Cooking",
+        "instruction": "Slowly cook sliced onions in butter until deeply caramelized.",
+        "duration_minutes": 40,
+        "heat_level": "Medium-Low",
+        "visual_cue": "Deep mahogany brown, very sweet smell",
+        "techniques_used": ["caramelization", "sauteing"]
+      },
+      {
+        "step_number": 2,
+        "phase": "Cooking",
+        "instruction": "Deglaze pan with a splash of wine or broth, scraping up browned bits.",
+        "techniques_used": ["deglazing"]
+      },
+      {
+        "step_number": 3,
+        "phase": "Cooking",
+        "instruction": "Add remaining broth, simmer for 20 minutes.",
+        "duration_minutes": 20,
+        "techniques_used": ["simmering"]
+      },
+      {
+        "step_number": 4,
+        "phase": "Finishing",
+        "instruction": "Ladle soup into crocks, top with bread and cheese, broil until melted and bubbly.",
+        "duration_minutes": 3,
+        "techniques_used": ["broiling"]
+      }
+    ],
+    "techniques_referenced": ["caramelization", "sauteing", "deglazing", "simmering", "broiling"],
+    "safety_notes": ["Broiler bowls will be extremely hot."],
+    "nutrition_per_serving": {"calories": 320, "protein_g": 14, "carbs_g": 30, "fat_g": 18}
+  },
+  {
+    "id": "recipe_10",
+    "name": "Banana Pancakes",
+    "aliases": ["Flapjacks"],
+    "cuisine": "American",
+    "category": "Breakfast",
+    "sub_category": "Pancakes",
+    "difficulty": "Easy",
+    "servings": 2,
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 15,
+    "total_time_minutes": 25,
+    "dietary_tags": ["Vegetarian"],
+    "ingredients": [
+      {"name": "All-purpose Flour", "quantity": 1, "unit": "cup", "category": "Baking", "substitutes": []},
+      {"name": "Milk", "quantity": 1, "unit": "cup", "category": "Dairy", "substitutes": []},
+      {"name": "Egg", "quantity": 1, "unit": "large", "category": "Dairy", "substitutes": []},
+      {"name": "Ripe Banana", "quantity": 1, "unit": "large", "category": "Produce", "substitutes": []},
+      {"name": "Baking Powder", "quantity": 2, "unit": "tsp", "category": "Baking", "substitutes": []}
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "phase": "Prep",
+        "instruction": "Mash banana and whisk with egg and milk.",
+        "techniques_used": []
+      },
+      {
+        "step_number": 2,
+        "phase": "Mixing",
+        "instruction": "Fold in dry ingredients until just combined. Do not overmix.",
+        "techniques_used": ["folding"]
+      },
+      {
+        "step_number": 3,
+        "phase": "Cooking",
+        "instruction": "Pour batter onto a hot, greased skillet.",
+        "heat_level": "Medium",
+        "techniques_used": ["shallow_frying"]
+      },
+      {
+        "step_number": 4,
+        "phase": "Cooking",
+        "instruction": "Flip when bubbles form on the surface and edges look set.",
+        "duration_minutes": 2,
+        "visual_cue": "Bubbles bursting on top, golden brown bottom",
+        "techniques_used": []
+      }
+    ],
+    "techniques_referenced": ["folding", "shallow_frying"],
+    "safety_notes": [],
+    "nutrition_per_serving": {"calories": 350, "protein_g": 10, "carbs_g": 65, "fat_g": 6}
+  }
+]

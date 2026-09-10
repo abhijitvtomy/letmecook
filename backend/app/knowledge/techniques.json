@@ -1,0 +1,526 @@
+[
+    {
+        "id": "sauteing",
+        "name": "Sautéing",
+        "definition": "Cooking food quickly in a small amount of fat over high heat.",
+        "how_to": [
+            "Heat a pan over medium-high to high heat.",
+            "Add a small amount of fat (oil, butter).",
+            "When the fat is hot, add the food.",
+            "Toss or stir constantly to prevent burning and ensure even cooking."
+        ],
+        "why_its_done": "To brown food, develop complex flavors through the Maillard reaction, and cook quickly while retaining moisture.",
+        "common_mistakes": [
+            "Overcrowding the pan (causes steaming instead of sautéing)",
+            "Not heating the pan/oil enough before adding food",
+            "Using the wrong oil (one with a low smoke point)"
+        ],
+        "used_in": ["stir-fry bases", "vegetable prep", "meat browning"],
+        "related_techniques": ["stir_frying", "searing", "sweating"]
+    },
+    {
+        "id": "stir_frying",
+        "name": "Stir-Frying",
+        "definition": "A Chinese cooking technique in which ingredients are fried in a small amount of very hot oil while being stirred or tossed in a wok.",
+        "how_to": [
+            "Preheat a wok or large pan until smoking hot.",
+            "Add a high smoke point oil.",
+            "Add aromatics, then protein, then vegetables in order of cooking time.",
+            "Toss continuously until cooked."
+        ],
+        "why_its_done": "To cook food extremely fast, preserving color, texture, and nutritional value.",
+        "common_mistakes": [
+            "Adding wet ingredients to the hot oil",
+            "Not prepping all ingredients beforehand (mise en place)",
+            "Using too much sauce, turning it into a boil"
+        ],
+        "used_in": ["Asian cuisine", "quick weeknight meals"],
+        "related_techniques": ["sauteing"]
+    },
+    {
+        "id": "braising",
+        "name": "Braising",
+        "definition": "A combination cooking method that uses both wet and dry heats: typically, the food is first seared at a high temperature, then finished in a covered pot at a lower temperature while sitting in some amount of liquid.",
+        "how_to": [
+            "Dry the meat and season well.",
+            "Sear the meat in hot fat until browned on all sides.",
+            "Remove meat, sauté aromatics, and deglaze the pot.",
+            "Return meat, add liquid (stock, wine) halfway up the meat.",
+            "Cover and simmer low and slow (stovetop or oven) until fork-tender."
+        ],
+        "why_its_done": "To break down tough connective tissues in cuts of meat, transforming them into gelatin for a rich, tender result.",
+        "common_mistakes": [
+            "Using too much liquid (boiling instead of braising)",
+            "Cooking at too high a temperature",
+            "Skipping the initial searing step"
+        ],
+        "used_in": ["pot roasts", "stews", "short ribs"],
+        "related_techniques": ["stewing", "searing", "simmering"]
+    },
+    {
+        "id": "blanching",
+        "name": "Blanching",
+        "definition": "Scalding vegetables in boiling water or oil, usually briefly, and then immediately moving them to an ice bath to halt the cooking process.",
+        "how_to": [
+            "Bring a large pot of heavily salted water to a rolling boil.",
+            "Submerge the vegetables for 1-3 minutes.",
+            "Remove vegetables with a slotted spoon.",
+            "Plunge immediately into a bowl of ice water."
+        ],
+        "why_its_done": "To soften vegetables, set their vibrant color, loosen skins for peeling, or prepare them for freezing by deactivating enzymes.",
+        "common_mistakes": [
+            "Not using enough salt in the boiling water",
+            "Skipping or delaying the ice bath (shocking)",
+            "Overcooking the vegetables"
+        ],
+        "used_in": ["green beans", "peeling tomatoes", "preparing veggies for freezing"],
+        "related_techniques": ["parboiling", "shocking"]
+    },
+    {
+        "id": "steaming",
+        "name": "Steaming",
+        "definition": "Cooking food using the steam from boiling water without submerging the food in the water itself.",
+        "how_to": [
+            "Bring an inch or two of water to a boil in a pot.",
+            "Place food in a steamer basket above the water.",
+            "Cover tightly to trap the steam and cook until tender."
+        ],
+        "why_its_done": "To cook delicately without agitating the food or leaching out water-soluble nutrients.",
+        "common_mistakes": [
+            "Letting the water touch the food",
+            "Running out of water in the pot (dry boiling)",
+            "Opening the lid too often, losing steam"
+        ],
+        "used_in": ["dumplings", "fish", "delicate vegetables"],
+        "related_techniques": ["en papillote", "poaching"]
+    },
+    {
+        "id": "poaching",
+        "name": "Poaching",
+        "definition": "Gently cooking food submerged in liquid at a low temperature, typically between 160°F and 180°F (71°C to 82°C).",
+        "how_to": [
+            "Heat liquid (water, broth, wine) until a few bubbles gently rise to the surface.",
+            "Submerge the food carefully.",
+            "Maintain the low heat and cook until done."
+        ],
+        "why_its_done": "To cook delicate proteins without toughening them, keeping them moist.",
+        "common_mistakes": [
+            "Letting the liquid boil, which toughens the protein",
+            "Not flavoring the poaching liquid"
+        ],
+        "used_in": ["eggs", "fish", "fruit"],
+        "related_techniques": ["simmering", "sous_vide"]
+    },
+    {
+        "id": "simmering",
+        "name": "Simmering",
+        "definition": "Cooking food in liquid at a temperature just below boiling (around 185°F to 205°F).",
+        "how_to": [
+            "Bring liquid to a boil.",
+            "Reduce heat until bubbles gently and occasionally break the surface.",
+            "Add food and maintain the temperature."
+        ],
+        "why_its_done": "To meld flavors in soups and stews, or cook foods gently over time.",
+        "common_mistakes": [
+            "Allowing it to reach a rapid boil",
+            "Covering tightly and accidentally boiling over"
+        ],
+        "used_in": ["soups", "stocks", "sauces"],
+        "related_techniques": ["boiling", "poaching", "braising"]
+    },
+    {
+        "id": "deep_frying",
+        "name": "Deep-Frying",
+        "definition": "Cooking food by completely submerging it in hot fat or oil.",
+        "how_to": [
+            "Heat oil to specific temp (usually 350-375°F).",
+            "Carefully drop dry or battered food into the oil.",
+            "Cook until golden brown.",
+            "Remove and drain on a wire rack or paper towels."
+        ],
+        "why_its_done": "To create a crisp exterior while cooking the interior quickly through high heat conduction.",
+        "common_mistakes": [
+            "Frying at too low a temperature (greasy food)",
+            "Overcrowding the pot (drops oil temp drastically)",
+            "Not drying food before frying (causes dangerous splatters)"
+        ],
+        "used_in": ["french fries", "fried chicken", "donuts"],
+        "related_techniques": ["shallow_frying"]
+    },
+    {
+        "id": "shallow_frying",
+        "name": "Shallow Frying",
+        "definition": "Cooking food in a pan with enough oil to reach about halfway up the sides of the food.",
+        "how_to": [
+            "Heat oil in a heavy skillet until shimmering.",
+            "Add breaded or battered food.",
+            "Cook until the bottom is crispy and golden, then carefully flip.",
+            "Drain excess oil."
+        ],
+        "why_its_done": "To achieve a crispy crust on flatter items without using a massive volume of oil.",
+        "common_mistakes": [
+            "Flipping too early before a crust forms",
+            "Using oil with a low smoke point"
+        ],
+        "used_in": ["cutlets", "latkes", "pan-fried fish"],
+        "related_techniques": ["deep_frying", "sauteing"]
+    },
+    {
+        "id": "tempering",
+        "name": "Tempering",
+        "definition": "Slowly raising the temperature of a delicate ingredient (like eggs or chocolate) or blooming spices in hot oil to release flavors.",
+        "how_to": [
+            "For eggs: Slowly whisk a small amount of hot liquid into the cold eggs to warm them gently.",
+            "For spices (Tadka): Heat oil or ghee, add whole spices until they sizzle and become fragrant."
+        ],
+        "why_its_done": "To prevent eggs from scrambling in hot soup/sauce, or to extract fat-soluble flavors from spices.",
+        "common_mistakes": [
+            "Adding hot liquid to eggs too quickly",
+            "Burning spices in too hot oil"
+        ],
+        "used_in": ["custards", "Indian curries (tadka)", "chocolate making"],
+        "related_techniques": ["emulsification"]
+    },
+    {
+        "id": "double_boiling",
+        "name": "Double Boiling",
+        "definition": "Using indirect heat to gently cook or melt ingredients.",
+        "how_to": [
+            "Bring an inch of water to a simmer in a saucepan.",
+            "Place a heatproof bowl snugly over the pot, ensuring the bottom doesn't touch the water.",
+            "Add ingredients to the bowl to melt or cook."
+        ],
+        "why_its_done": "To provide gentle, even heat for heat-sensitive ingredients that might burn or separate over direct flame.",
+        "common_mistakes": [
+            "Letting the water touch the bottom of the bowl",
+            "Getting water droplets into melting chocolate (causing seizing)"
+        ],
+        "used_in": ["melting chocolate", "hollandaise sauce", "custards"],
+        "related_techniques": ["bain_marie"]
+    },
+    {
+        "id": "bain_marie",
+        "name": "Bain-Marie",
+        "definition": "A water bath used in an oven to provide gentle, uniform heat.",
+        "how_to": [
+            "Place a baking dish containing the food into a larger roasting pan.",
+            "Pour boiling water into the larger pan until it reaches halfway up the sides of the inner dish.",
+            "Bake as directed."
+        ],
+        "why_its_done": "To prevent the edges of custards or delicate baked goods from overcooking before the center sets, and to prevent cracking.",
+        "common_mistakes": [
+            "Splashing water into the food",
+            "Using cold water instead of boiling water"
+        ],
+        "used_in": ["cheesecakes", "flan", "creme brulee"],
+        "related_techniques": ["double_boiling"]
+    },
+    {
+        "id": "deglazing",
+        "name": "Deglazing",
+        "definition": "Adding liquid to a hot pan to loosen browned bits of food stuck to the bottom.",
+        "how_to": [
+            "Remove cooked meat/vegetables from the pan.",
+            "Pour in a liquid (wine, broth, vinegar, water).",
+            "Use a wooden spoon to scrape the flavorful browned bits (fond) from the bottom as the liquid bubbles."
+        ],
+        "why_its_done": "To capture the intense flavor of the fond to make a pan sauce or gravy.",
+        "common_mistakes": [
+            "Deglazing a pan with burnt (blackened) fond, which will taste bitter",
+            "Using an unsafe liquid over open flame without turning heat off first (e.g., strong alcohol)"
+        ],
+        "used_in": ["pan sauces", "stews", "soups"],
+        "related_techniques": ["reduction", "searing"]
+    },
+    {
+        "id": "reduction",
+        "name": "Reduction",
+        "definition": "Simmering or boiling a liquid to evaporate water and concentrate its flavors and thicken its consistency.",
+        "how_to": [
+            "Place liquid (sauce, stock, wine) in an uncovered pan.",
+            "Simmer until the volume decreases to the desired amount (e.g., 'reduce by half')."
+        ],
+        "why_its_done": "To intensify flavor and create a thicker, more syrupy texture without adding starches.",
+        "common_mistakes": [
+            "Boiling too rapidly, which can turn the sauce bitter or break an emulsion",
+            "Reducing a liquid that is already too salty"
+        ],
+        "used_in": ["balsamic glaze", "demi-glace", "pan sauces"],
+        "related_techniques": ["simmering", "deglazing"]
+    },
+    {
+        "id": "emulsification",
+        "name": "Emulsification",
+        "definition": "Forcing two unmixable liquids (like oil and water/vinegar) to combine into a stable mixture.",
+        "how_to": [
+            "Start with the water-based ingredient (and an emulsifier like mustard or egg yolk).",
+            "Whisk vigorously.",
+            "Slowly, drop by drop, drizzle in the oil while continuing to whisk until the mixture thickens and comes together."
+        ],
+        "why_its_done": "To create creamy, cohesive dressings and sauces from oil and acidic liquids.",
+        "common_mistakes": [
+            "Adding oil too quickly, causing the mixture to break (separate)",
+            "Not using an emulsifier"
+        ],
+        "used_in": ["vinaigrettes", "mayonnaise", "hollandaise"],
+        "related_techniques": ["tempering"]
+    },
+    {
+        "id": "marinating",
+        "name": "Marinating",
+        "definition": "Soaking food in a seasoned, often acidic or enzymatic liquid before cooking.",
+        "how_to": [
+            "Combine acid, oil, aromatics, and salt to make the marinade.",
+            "Submerge the protein or vegetable in the marinade.",
+            "Refrigerate for the appropriate time (30 mins for seafood, up to 24h for tough meats)."
+        ],
+        "why_its_done": "To add flavor and slightly tenderize proteins.",
+        "common_mistakes": [
+            "Marinating too long in highly acidic mixtures (turns meat mushy)",
+            "Reusing marinade that touched raw meat without boiling it first"
+        ],
+        "used_in": ["fajitas", "BBQ meats", "ceviche (chemical cooking)"],
+        "related_techniques": ["brining"]
+    },
+    {
+        "id": "fermentation",
+        "name": "Fermentation",
+        "definition": "The breakdown of carbohydrates by bacteria and yeast to produce acids, alcohol, or gases.",
+        "how_to": [
+            "Introduce beneficial bacteria/yeast to food.",
+            "Keep in a controlled environment (often anaerobic and at room temperature) for days or weeks."
+        ],
+        "why_its_done": "To preserve food, improve digestibility, and develop complex, tangy, umami flavors.",
+        "common_mistakes": [
+            "Using insufficient salt, allowing bad bacteria to grow",
+            "Exposing anaerobic ferments to oxygen (causes mold)"
+        ],
+        "used_in": ["kimchi", "sauerkraut", "sourdough", "yogurt"],
+        "related_techniques": ["proofing", "pickling"]
+    },
+    {
+        "id": "proofing",
+        "name": "Proofing",
+        "definition": "The final rise of shaped yeast dough before baking.",
+        "how_to": [
+            "Shape the kneaded dough.",
+            "Place in a warm, draft-free environment.",
+            "Cover to prevent drying out and leave until doubled in size."
+        ],
+        "why_its_done": "To allow yeast to produce carbon dioxide gas, creating the airy, open crumb structure in bread.",
+        "common_mistakes": [
+            "Overproofing (dough collapses when touched or baked)",
+            "Underproofing (results in dense, heavy bread)"
+        ],
+        "used_in": ["bread baking", "pizza dough", "croissants"],
+        "related_techniques": ["kneading", "fermentation"]
+    },
+    {
+        "id": "kneading",
+        "name": "Kneading",
+        "definition": "Working dough by hand or mixer to develop the gluten network.",
+        "how_to": [
+            "Push the dough away with the heel of your hand.",
+            "Fold it back over itself.",
+            "Turn 90 degrees and repeat until smooth and elastic."
+        ],
+        "why_its_done": "To align gluten proteins, giving dough the strength and structure needed to trap gas and rise.",
+        "common_mistakes": [
+            "Over-kneading in a mixer (dough becomes tough or breaks down)",
+            "Under-kneading (bread won't rise properly)"
+        ],
+        "used_in": ["bread", "pasta making", "pizza dough"],
+        "related_techniques": ["proofing", "folding"]
+    },
+    {
+        "id": "folding",
+        "name": "Folding",
+        "definition": "Gently combining a light, airy ingredient (like whipped egg whites) with a heavier mixture.",
+        "how_to": [
+            "Add a portion of the light mixture into the heavy mixture.",
+            "Use a spatula to cut down through the center, scrape across the bottom, and bring the heavy mixture up over the light mixture.",
+            "Rotate the bowl and repeat gently until just combined."
+        ],
+        "why_its_done": "To mix ingredients without deflating the trapped air.",
+        "common_mistakes": [
+            "Stirring vigorously instead of folding, which knocks out the air",
+            "Folding too long"
+        ],
+        "used_in": ["souffles", "mousses", "sponge cakes"],
+        "related_techniques": ["creaming", "whipping"]
+    },
+    {
+        "id": "creaming",
+        "name": "Creaming",
+        "definition": "Beating solid fat (usually butter) and sugar together until light, fluffy, and pale.",
+        "how_to": [
+            "Ensure butter is at room temperature.",
+            "Beat with sugar using a mixer on medium speed for 3-5 minutes.",
+            "Scrape down the bowl occasionally."
+        ],
+        "why_its_done": "To trap air bubbles in the fat, which provides physical leavening and tenderness to baked goods.",
+        "common_mistakes": [
+            "Using butter that is too cold (won't trap air) or too warm/melted (collapses)",
+            "Not creaming long enough"
+        ],
+        "used_in": ["cookies", "cakes", "frosting"],
+        "related_techniques": ["folding", "whipping"]
+    },
+    {
+        "id": "caramelization",
+        "name": "Caramelization",
+        "definition": "The browning of sugar, a process used extensively in cooking for the resulting sweet nutty flavor and brown color.",
+        "how_to": [
+            "Heat sugar (or naturally sugary foods like onions) slowly over medium-low heat.",
+            "Cook until the natural sugars melt and turn amber/brown, taking care not to burn."
+        ],
+        "why_its_done": "To transform simple sweetness into complex, nutty, buttery, and slightly bitter flavors.",
+        "common_mistakes": [
+            "Cooking too fast or walking away, causing it to burn (turns bitter instantly)",
+            "Stirring wet caramel too much, causing crystallization"
+        ],
+        "used_in": ["caramelized onions", "creme brulee crust", "caramel sauce"],
+        "related_techniques": ["searing", "roasting"]
+    },
+    {
+        "id": "roasting",
+        "name": "Roasting",
+        "definition": "Cooking food in an oven using dry, indirect heat, usually at a higher temperature (400°F+).",
+        "how_to": [
+            "Toss food in oil and seasonings.",
+            "Spread evenly on a baking sheet, ensuring space between items.",
+            "Cook uncovered in a hot oven until browned and tender."
+        ],
+        "why_its_done": "To caramelize the exterior and cook the interior evenly, enhancing natural sweetness and savory notes.",
+        "common_mistakes": [
+            "Overcrowding the pan (causes steaming instead of roasting)",
+            "Not using enough oil"
+        ],
+        "used_in": ["root vegetables", "whole chicken", "beef roasts"],
+        "related_techniques": ["baking", "broiling"]
+    },
+    {
+        "id": "grilling",
+        "name": "Grilling",
+        "definition": "Cooking food rapidly over direct, radiant heat, usually on a grate over hot coals or gas flames.",
+        "how_to": [
+            "Preheat grill until very hot.",
+            "Oil the grates.",
+            "Place food directly over the heat for searing, or move to indirect heat to finish cooking without burning."
+        ],
+        "why_its_done": "To give food a distinct smoky flavor and charred exterior.",
+        "common_mistakes": [
+            "Constantly flipping or moving the food",
+            "Cooking thick cuts purely on direct high heat (burnt outside, raw inside)"
+        ],
+        "used_in": ["steaks", "burgers", "vegetables", "kebabs"],
+        "related_techniques": ["broiling", "smoking"]
+    },
+    {
+        "id": "smoking",
+        "name": "Smoking",
+        "definition": "Flavoring, browning, or cooking food by exposing it to smoke from smoldering wood or other materials.",
+        "how_to": [
+            "Maintain a low, steady temperature (usually 225°F-250°F) in a smoker.",
+            "Add hardwood chips or logs to generate smoke.",
+            "Cook meat very slowly over several hours."
+        ],
+        "why_its_done": "To impart a deep, woodsy flavor and slowly break down extremely tough cuts of meat (like brisket or ribs) into tender masterpieces.",
+        "common_mistakes": [
+            "Using softwoods (pine), which give off toxic, bad-tasting smoke",
+            "Too much smoke ('dirty smoke'), making food taste bitter"
+        ],
+        "used_in": ["BBQ brisket", "ribs", "smoked salmon"],
+        "related_techniques": ["roasting", "grilling"]
+    },
+    {
+        "id": "pressure_cooking",
+        "name": "Pressure Cooking",
+        "definition": "Cooking food in a sealed vessel that does not permit air or liquids to escape below a preset pressure.",
+        "how_to": [
+            "Add food and liquid to the pressure cooker.",
+            "Seal the lid and heat until high pressure is achieved.",
+            "Cook for the specified time, then release pressure quickly or naturally depending on the food."
+        ],
+        "why_its_done": "To drastically reduce cooking times (up to 70% faster) and extract flavor quickly.",
+        "common_mistakes": [
+            "Overfilling the cooker above the max fill line",
+            "Not using enough liquid to build steam/pressure",
+            "Forcing the lid open before pressure is released (extremely dangerous)"
+        ],
+        "used_in": ["beans", "stews", "tough meats", "risotto"],
+        "related_techniques": ["braising", "stewing"]
+    },
+    {
+        "id": "sous_vide",
+        "name": "Sous-Vide",
+        "definition": "Cooking food vacuum-sealed in a plastic bag in a precisely regulated water bath.",
+        "how_to": [
+            "Season food and seal in a vacuum bag.",
+            "Submerge in a water bath heated by an immersion circulator to the exact desired final temperature of the food.",
+            "Cook for hours; remove and sear quickly before serving."
+        ],
+        "why_its_done": "To achieve absolute precision and perfection in doneness, with zero risk of overcooking.",
+        "common_mistakes": [
+            "Not searing the food afterward (food looks grey and unappetizing)",
+            "Not removing all air from the bag (bag floats, causing uneven cooking)"
+        ],
+        "used_in": ["steaks", "pork chops", "soft boiled eggs"],
+        "related_techniques": ["poaching", "searing"]
+    },
+    {
+        "id": "searing",
+        "name": "Searing",
+        "definition": "Cooking the surface of food (usually meat) at high temperature until a browned crust forms.",
+        "how_to": [
+            "Pat the meat completely dry.",
+            "Heat a heavy skillet (like cast iron) until very hot.",
+            "Add oil, then the meat. Do not move the meat until a crust forms.",
+            "Flip and repeat."
+        ],
+        "why_its_done": "To build massive flavor through the Maillard reaction. (Myth buster: Searing does NOT 'lock in juices', it only builds flavor/texture).",
+        "common_mistakes": [
+            "Trying to sear wet meat (it will steam instead)",
+            "Moving the meat too soon, tearing the crust",
+            "Overcrowding the pan"
+        ],
+        "used_in": ["steaks", "roasts", "scallops"],
+        "related_techniques": ["sauteing", "braising"]
+    },
+    {
+        "id": "baking",
+        "name": "Baking",
+        "definition": "Cooking food using prolonged dry heat acting by convection, normally in an oven.",
+        "how_to": [
+            "Preheat the oven to the specified temperature.",
+            "Place prepared food in a baking dish or sheet.",
+            "Cook in the center of the oven until done."
+        ],
+        "why_its_done": "To create structure in doughs/batters, or to gently cook items without direct intense heat.",
+        "common_mistakes": [
+            "Not preheating the oven fully",
+            "Opening the oven door too often, dropping the temperature",
+            "Using dark vs light baking pans incorrectly (dark pans cook edges faster)"
+        ],
+        "used_in": ["bread", "cakes", "casseroles"],
+        "related_techniques": ["roasting"]
+    },
+    {
+        "id": "broiling",
+        "name": "Broiling",
+        "definition": "Cooking by exposing food to direct radiant heat, either on a grill over live coals or below a gas burner or electric coil in an oven.",
+        "how_to": [
+            "Preheat the broiler.",
+            "Place food on a broiler pan to catch fat.",
+            "Place close to the heat source (usually 2-4 inches away).",
+            "Watch constantly as food burns quickly."
+        ],
+        "why_its_done": "To quickly cook thin cuts of meat, melt cheese, or char the skin of vegetables.",
+        "common_mistakes": [
+            "Walking away (broiling goes from perfect to burnt in seconds)",
+            "Using glass bakeware under a broiler (it will shatter)"
+        ],
+        "used_in": ["melting cheese on french onion soup", "thin steaks", "blistering peppers"],
+        "related_techniques": ["grilling", "roasting"]
+    }
+]
