@@ -57,47 +57,32 @@ async def chat_endpoint(request: ChatRequest):
             state["current_step"] = 1
             request.message = f"I uploaded an image of {dish_name}. " + request.message
             
-    # Intent detection for finding a recipe
-    # Smart recipe detection from database
-    if not state["current_recipe_id"]:
-        import re
-        from app.database import get_all_recipes
-        
-        # Check all available recipes in DB against user message
-        all_recipes = get_all_recipes(page=1, per_page=1000)
-        msg_lower = request.message.lower()
-        
-        # 1. Exact or partial match on name or aliases
-        for rec in all_recipes:
-            name_lower = rec['name'].lower()
-            # If dish name appears in message or message in dish name
-            if name_lower in msg_lower or any(word in msg_lower for word in name_lower.split() if len(word) > 3):
-                state["current_recipe_id"] = rec['id']
-                state["current_step"] = 1
-                break
-            # Check aliases
-            for alias in rec.get('aliases', []):
-                if alias.lower() in msg_lower:
-                    state["current_recipe_id"] = rec['id']
+    # Smart dish / recipe detection from user message
+    msg_lower = request.message.lower()
+    import re
+    
+    STOP_WORDS = {
+        "how", "do", "can", "i", "make", "cook", "prepare", "recipe", "for", "the", "a", "an",
+        "to", "of", "and", "in", "with", "on", "at", "by", "from", "up", "about", "into", "over",
+        "after", "what", "is", "are", "was", "were", "tell", "show", "me", "give", "want", "please",
+        "help", "hello", "hi", "hey", "good", "morning", "evening", "thanks", "thank", "you",
+        "steps", "time", "temperature", "heat", "duration", "next", "step", "first", "last"
+    }
+
+    cleaned = re.sub(r'[^a-zA-Z0-9\s]', ' ', msg_lower).strip()
+    words = [w for w in cleaned.split() if w not in STOP_WORDS and len(w) > 2]
+    
+    # If the user mentioned dish keywords, search and switch to the matching recipe
+    if words:
+        search_query = " ".join(words)
+        matches = search_recipes(search_query, limit=3)
+        if matches:
+            for match in matches:
+                match_name_lower = match['name'].lower()
+                if any(w in match_name_lower for w in words):
+                    state["current_recipe_id"] = match['id']
                     state["current_step"] = 1
                     break
-            if state["current_recipe_id"]:
-                break
-                
-        # 2. Fallback to FTS5 search if still not found
-        if not state["current_recipe_id"]:
-            cleaned = re.sub(
-                r'^(how\s+(do|can)\s+i\s+(make|cook|prepare)|recipe\s+for|how\s+to\s+(make|cook|prepare)|show\s+me|tell\s+me\s+how\s+to\s+make)\s+',
-                '',
-                msg_lower
-            )
-            cleaned = re.sub(r'[^a-zA-Z0-9\s]', ' ', cleaned).strip()
-            matches = search_recipes(cleaned, limit=1) if cleaned else []
-            if not matches:
-                matches = search_recipes(request.message, limit=1)
-            if matches:
-                state["current_recipe_id"] = matches[0]['id']
-                state["current_step"] = 1
 
     # RAG Context
     recipe_context = ""

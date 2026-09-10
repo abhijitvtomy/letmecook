@@ -33,6 +33,19 @@ def on_startup():
 def health():
     return {"status": "healthy"}
 
+@app.get("/api/debug-env")
+def debug_env():
+    import os
+    env_keys = {}
+    for var in ["GEMINI_API_KEY", "GOOGLE_API_KEY", "GEMINI_KEY", "API_KEY"]:
+        val = os.getenv(var, "").strip()
+        if val:
+            env_keys[var] = f"Present (starts with {val[:4]}..., len {len(val)})"
+        else:
+            env_keys[var] = "Not Set"
+    matching = [k for k in os.environ.keys() if any(t in k.upper() for t in ["KEY", "GEMINI", "GOOGLE", "API"])]
+    return {"checked": env_keys, "matching_system_vars": matching}
+
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
 if os.path.exists(STATIC_DIR):
     assets_dir = os.path.join(STATIC_DIR, "assets")
