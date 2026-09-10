@@ -5,14 +5,19 @@ from google.genai import types
 from app.config import GEMINI_API_KEY
 
 def get_api_key():
-    key = os.getenv("GEMINI_API_KEY", "")
-    if key and key != "your_gemini_api_key_here":
-        return key
+    for var in ["GEMINI_API_KEY", "GOOGLE_API_KEY", "GEMINI_KEY", "API_KEY"]:
+        key = os.getenv(var, "").strip()
+        if key and key != "your_gemini_api_key_here":
+            return key
     env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env')
     if os.path.exists(env_path):
         from dotenv import load_dotenv
         load_dotenv(env_path, override=True)
-    return os.getenv("GEMINI_API_KEY", "")
+        for var in ["GEMINI_API_KEY", "GOOGLE_API_KEY", "GEMINI_KEY", "API_KEY"]:
+            key = os.getenv(var, "").strip()
+            if key and key != "your_gemini_api_key_here":
+                return key
+    return ""
 
 def get_client():
     key = get_api_key()
