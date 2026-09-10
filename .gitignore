@@ -1,0 +1,17 @@
+# Environment Variables (Secrets)
+.env
+.env.local
+
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node / Vite
+node_modules/
+dist/
+
+# SQLite Database (or keep committed if you want seed data online)
+*.log
