@@ -3,6 +3,7 @@ from app.services.recipe_service import list_recipes, get_recipe
 
 router = APIRouter(prefix="/recipes", tags=["recipes"])
 
+@router.get("")
 @router.get("/")
 def get_recipes(page: int = Query(1, ge=1), per_page: int = Query(10, ge=1, le=100), cuisine: str = None, category: str = None, difficulty: str = None):
     # Pass filters downstream if DB logic handles it; else simple list

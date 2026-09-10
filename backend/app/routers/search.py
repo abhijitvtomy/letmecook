@@ -3,6 +3,7 @@ from app.services.search_service import search_recipes
 
 router = APIRouter(prefix="/search", tags=["search"])
 
+@router.get("")
 @router.get("/")
 def search(q: str = Query(""), cuisine: str = None, category: str = None, difficulty: str = None, limit: int = 10):
     filters = {"cuisine": cuisine, "category": category, "difficulty": difficulty, "limit": limit}
