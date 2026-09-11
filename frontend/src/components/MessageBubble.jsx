@@ -21,12 +21,36 @@ export default function MessageBubble({ message, onStartCooking }) {
             {isUser ? (
               <p className="whitespace-pre-wrap">{message.content}</p>
             ) : (
-              <ReactMarkdown>{message.content}</ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  img: ({ node, ...props }) => (
+                    <div className="not-prose my-4 overflow-hidden rounded-2xl border border-neutral-700/80 bg-neutral-900 shadow-xl group transition-all duration-300 hover:border-orange-500/50">
+                      <div className="relative aspect-[16/9] w-full overflow-hidden">
+                        <img
+                          {...props}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 m-0"
+                          loading="lazy"
+                          onError={(e) => {
+                            if (!e.currentTarget.dataset.fallback) {
+                              e.currentTarget.dataset.fallback = 'true';
+                              e.currentTarget.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';
+                            } else {
+                              e.currentTarget.parentElement.parentElement.style.display = 'none';
+                            }
+                          }}
+                        />
+                      </div>
+                    </div>
+                  )
+                }}
+              >
+                {message.content}
+              </ReactMarkdown>
             )}
 
-            {/* Dish Picture Displayed at the end of the chatbot response */}
-            {dishImage && (
-              <div className="mt-4 not-prose rounded-xl overflow-hidden border border-neutral-700/80 bg-neutral-900 shadow-md group transition-all duration-300 hover:border-orange-500/50">
+            {/* Dish Picture Displayed at the end of the chatbot response if not already in markdown */}
+            {dishImage && !message.content?.includes("![") && (
+              <div className="mt-4 not-prose rounded-2xl overflow-hidden border border-neutral-700/80 bg-neutral-900 shadow-xl group transition-all duration-300 hover:border-orange-500/50">
                 <div className="relative aspect-[16/9] w-full overflow-hidden">
                   <img 
                     src={dishImage} 
@@ -44,7 +68,7 @@ export default function MessageBubble({ message, onStartCooking }) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-3">
                     <span className="text-xs sm:text-sm font-semibold text-white flex items-center gap-1.5 drop-shadow-md">
-                      <span className="text-orange-400">🍽️ Finished Dish:</span> {dishName || "Recipe Presentation"}
+                      <span className="text-orange-400 font-bold">🍽️ Finished Dish:</span> {dishName || "Recipe Presentation"}
                     </span>
                   </div>
                 </div>

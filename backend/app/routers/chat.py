@@ -129,6 +129,11 @@ async def chat_endpoint(request: ChatRequest):
     if not dish_image_url and state.get("current_recipe_id"):
         dish_image_url = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
 
+    # Embed finished dish photo directly at the end of the chatbot markdown text
+    if dish_image_url and ("![" not in response_text):
+        dish_title = (recipe_data.get('name') if isinstance(recipe_data, dict) else getattr(recipe_data, 'name', None)) or "Finished Dish"
+        response_text += f"\n\n---\n\n### 🍽️ {dish_title} — Finished Presentation\n\n![{dish_title}]({dish_image_url})"
+
     return ChatResponse(
         response=response_text,
         recipe=recipe_data,
