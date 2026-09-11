@@ -107,9 +107,26 @@ async def chat_endpoint(request: ChatRequest):
             if best_id:
                 matched_id = best_id
                     
+    # Check if this message is a follow-up about the active recipe
+    is_follow_up = False
+    if state.get("current_recipe_id"):
+        curr_rec = get_recipe(state["current_recipe_id"])
+        if curr_rec:
+            curr_name = (curr_rec.get('name') if isinstance(curr_rec, dict) else getattr(curr_rec, 'name', '')).lower()
+            aliases = curr_rec.get('aliases', []) if isinstance(curr_rec, dict) else getattr(curr_rec, 'aliases', [])
+            if curr_name in msg_lower or any(a.lower() in msg_lower for a in aliases):
+                is_follow_up = True
+            else:
+                FOLLOW_UP_INDICATORS = ["substitute", "instead of", "heat", "temperature", "next step", "step", "minutes", "leftover", "store", "freeze", "salt", "spicy", "reheat", "cook for"]
+                is_follow_up = any(w in msg_lower for w in FOLLOW_UP_INDICATORS)
+
     if matched_id:
         state["current_recipe_id"] = matched_id
         state["current_step"] = 1
+    elif not is_follow_up:
+        # User switched to a new dish or topic! Clear the previous recipe so it doesn't contaminate
+        state["current_recipe_id"] = None
+        state["current_step"] = None
 
     # RAG Context
     recipe_context = ""
@@ -133,20 +150,14 @@ async def chat_endpoint(request: ChatRequest):
     if len(state["history"]) > 20:
         state["history"] = state["history"][-20:]
         
-    # Fetch accurate dish image
+    # Fetch accurate dish image for the current message
     from app.services.image_service import fetch_dish_image
     
-    known_name = None
-    if recipe_data:
-        known_name = recipe_data.get('name') if isinstance(recipe_data, dict) else getattr(recipe_data, 'name', None)
+    dish_title, dish_image_url = fetch_dish_image(request.message)
+    
+    if not dish_image_url and recipe_data:
         dish_image_url = recipe_data.get('image_url') if isinstance(recipe_data, dict) else getattr(recipe_data, 'image_url', None)
-    else:
-        dish_image_url = None
-
-    if not dish_image_url:
-        dish_title, dish_image_url = fetch_dish_image(request.message, known_dish_name=known_name)
-    else:
-        dish_title = known_name or "Finished Dish"
+        dish_title = (recipe_data.get('name') if isinstance(recipe_data, dict) else getattr(recipe_data, 'name', None)) or dish_title
 
     # Embed finished dish photo directly at the end of the chatbot markdown text
     if dish_image_url and ("![" not in response_text):
