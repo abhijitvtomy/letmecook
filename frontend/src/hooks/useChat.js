@@ -38,6 +38,7 @@ export default function useChat() {
           role: 'assistant',
           content: data.response,
           recipe: data.recipe || null,
+          imageUrl: data.image_url || data.recipe?.image_url || null,
           timestamp: Date.now()
         }
       ]);
@@ -96,6 +97,7 @@ export default function useChat() {
           role: 'assistant',
           content: chatData.response,
           recipe: chatData.recipe || null,
+          imageUrl: chatData.image_url || chatData.recipe?.image_url || null,
           timestamp: Date.now()
         }
       ]);

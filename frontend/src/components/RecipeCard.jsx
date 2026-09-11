@@ -9,22 +9,40 @@ export default function RecipeCard({ recipe, onStartCooking }) {
     setCheckedIngredients(prev => ({ ...prev, [idx]: !prev[idx] }));
   };
 
+  const recipeName = recipe.name || recipe.title || "Curated Recipe";
+  const prepTime = recipe.prep_time_minutes ? `${recipe.prep_time_minutes}m` : (recipe.prep_time || '?');
+  const cookTime = recipe.cook_time_minutes ? `${recipe.cook_time_minutes}m` : (recipe.cook_time || '?');
+  const totalTime = recipe.total_time_minutes ? `${recipe.total_time_minutes}m` : (recipe.total_time || '?');
+
   return (
-    <div className="bg-neutral-800 border border-neutral-700 rounded-2xl overflow-hidden shadow-lg w-full max-w-2xl text-left">
+    <div className="bg-neutral-800 border border-neutral-700 rounded-2xl overflow-hidden shadow-xl w-full max-w-2xl text-left">
+      {recipe.image_url && (
+        <div className="relative w-full h-48 sm:h-64 overflow-hidden bg-neutral-900 group">
+          <img 
+            src={recipe.image_url} 
+            alt={recipeName} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-800 via-transparent to-black/30" />
+        </div>
+      )}
+
       <div className="p-6 border-b border-neutral-700">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-2xl font-serif font-bold text-white">{recipe.title}</h3>
+          <h3 className="text-2xl font-serif font-bold text-white">{recipeName}</h3>
           {recipe.cuisine && (
-            <span className="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded-full font-medium">
+            <span className="bg-orange-500/20 text-orange-400 text-xs px-2.5 py-1 rounded-full font-medium border border-orange-500/30">
               {recipe.cuisine}
             </span>
           )}
         </div>
         
         <div className="flex flex-wrap gap-4 text-sm text-neutral-400 mt-4">
-          <div className="flex items-center gap-1"><Clock size={16} /> Prep: {recipe.prep_time || '?'}</div>
-          <div className="flex items-center gap-1"><Flame size={16} /> Cook: {recipe.cook_time || '?'}</div>
-          <div className="flex items-center gap-1 text-orange-400"><Clock size={16} /> Total: {recipe.total_time || '?'}</div>
+          <div className="flex items-center gap-1"><Clock size={16} /> Prep: {prepTime}</div>
+          <div className="flex items-center gap-1"><Flame size={16} /> Cook: {cookTime}</div>
+          <div className="flex items-center gap-1 text-orange-400 font-medium"><Clock size={16} /> Total: {totalTime}</div>
           <div className="flex items-center gap-1"><Users size={16} /> Serves: {recipe.servings || '?'}</div>
           <div className="flex items-center gap-1"><ChefHat size={16} /> {recipe.difficulty || 'Medium'}</div>
         </div>
@@ -50,7 +68,7 @@ export default function RecipeCard({ recipe, onStartCooking }) {
                   className="mt-1 w-4 h-4 rounded border-neutral-600 text-orange-500 focus:ring-orange-500 bg-neutral-700 cursor-pointer"
                 />
                 <span className={checkedIngredients[idx] ? 'line-through text-neutral-500' : ''}>
-                  <strong>{ing.amount} {ing.unit}</strong> {ing.item} {ing.notes ? `(${ing.notes})` : ''}
+                  <strong>{ing.quantity ?? ing.amount} {ing.unit}</strong> {ing.name ?? ing.item} {ing.prep_note || ing.notes ? `(${ing.prep_note || ing.notes})` : ''}
                 </span>
               </li>
             ))}

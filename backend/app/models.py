@@ -79,6 +79,7 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
     recipe: Optional[Recipe] = None
+    image_url: Optional[str] = None
     current_step: Optional[int] = None
     techniques: Optional[List[Technique]] = None
     conversation_id: str

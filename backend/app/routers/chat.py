@@ -125,9 +125,12 @@ async def chat_endpoint(request: ChatRequest):
     if len(state["history"]) > 20:
         state["history"] = state["history"][-20:]
         
+    dish_image_url = recipe_data.image_url if recipe_data else None
+
     return ChatResponse(
         response=response_text,
         recipe=recipe_data,
+        image_url=dish_image_url,
         current_step=state["current_step"],
         techniques=None,
         conversation_id=conv_id
