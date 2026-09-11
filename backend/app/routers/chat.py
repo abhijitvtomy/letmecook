@@ -60,29 +60,48 @@ async def chat_endpoint(request: ChatRequest):
     # Smart dish / recipe detection from user message
     msg_lower = request.message.lower()
     import re
+    from app.database import get_all_recipes
     
-    STOP_WORDS = {
-        "how", "do", "can", "i", "make", "cook", "prepare", "recipe", "for", "the", "a", "an",
-        "to", "of", "and", "in", "with", "on", "at", "by", "from", "up", "about", "into", "over",
-        "after", "what", "is", "are", "was", "were", "tell", "show", "me", "give", "want", "please",
-        "help", "hello", "hi", "hey", "good", "morning", "evening", "thanks", "thank", "you",
-        "steps", "time", "temperature", "heat", "duration", "next", "step", "first", "last"
-    }
-
-    cleaned = re.sub(r'[^a-zA-Z0-9\s]', ' ', msg_lower).strip()
-    words = [w for w in cleaned.split() if w not in STOP_WORDS and len(w) > 2]
+    matched_id = None
+    all_recipes = get_all_recipes(page=1, per_page=1000)
+    # Sort recipes by title length descending so specific dishes match before short generic ones
+    sorted_recipes = sorted(all_recipes, key=lambda r: len(r['name']), reverse=True)
     
-    # If the user mentioned dish keywords, search and switch to the matching recipe
-    if words:
-        search_query = " ".join(words)
-        matches = search_recipes(search_query, limit=3)
-        if matches:
-            for match in matches:
-                match_name_lower = match['name'].lower()
-                if any(w in match_name_lower for w in words):
-                    state["current_recipe_id"] = match['id']
-                    state["current_step"] = 1
+    # Priority 1: Exact dish name or alias in user message (e.g. "pad thai", "chicken biryani")
+    for rec in sorted_recipes:
+        rec_name_lower = rec['name'].lower()
+        if len(rec_name_lower) >= 4 and rec_name_lower in msg_lower:
+            matched_id = rec['id']
+            break
+        for alias in rec.get('aliases', []):
+            if len(alias) >= 4 and alias.lower() in msg_lower:
+                matched_id = rec['id']
+                break
+        if matched_id:
+            break
+            
+    # Priority 2: Keyword search with stop words removed
+    if not matched_id:
+        STOP_WORDS = {
+            "how", "do", "can", "i", "make", "cook", "prepare", "recipe", "for", "the", "a", "an",
+            "to", "of", "and", "in", "with", "on", "at", "by", "from", "up", "about", "into", "over",
+            "after", "what", "is", "are", "was", "were", "tell", "show", "me", "give", "want", "please",
+            "help", "hello", "hi", "hey", "good", "morning", "evening", "thanks", "thank", "you",
+            "steps", "time", "temperature", "heat", "duration", "next", "step", "first", "last",
+            "actually", "switch", "let", "us", "now", "instead", "another", "one"
+        }
+        cleaned = re.sub(r'[^a-zA-Z0-9\s]', ' ', msg_lower).strip()
+        words = [w for w in cleaned.split() if w not in STOP_WORDS and len(w) > 2]
+        if words:
+            for w in words:
+                matches = search_recipes(w, limit=1)
+                if matches and any(w in matches[0]['name'].lower() for w in words):
+                    matched_id = matches[0]['id']
                     break
+                    
+    if matched_id:
+        state["current_recipe_id"] = matched_id
+        state["current_step"] = 1
 
     # RAG Context
     recipe_context = ""
