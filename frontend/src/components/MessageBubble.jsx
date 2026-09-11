@@ -33,7 +33,14 @@ export default function MessageBubble({ message, onStartCooking }) {
                     alt={dishName || "Finished dish presentation"} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
-                    onError={(e) => { e.currentTarget.parentElement.parentElement.style.display = 'none'; }}
+                    onError={(e) => {
+                      if (!e.currentTarget.dataset.fallback) {
+                        e.currentTarget.dataset.fallback = 'true';
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';
+                      } else {
+                        e.currentTarget.parentElement.parentElement.style.display = 'none';
+                      }
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-3">
                     <span className="text-xs sm:text-sm font-semibold text-white flex items-center gap-1.5 drop-shadow-md">

@@ -23,7 +23,14 @@ export default function RecipeCard({ recipe, onStartCooking }) {
             alt={recipeName} 
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
-            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            onError={(e) => {
+              if (!e.currentTarget.dataset.fallback) {
+                e.currentTarget.dataset.fallback = 'true';
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';
+              } else {
+                e.currentTarget.style.display = 'none';
+              }
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-800 via-transparent to-black/30" />
         </div>

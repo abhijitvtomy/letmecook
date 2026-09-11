@@ -125,7 +125,9 @@ async def chat_endpoint(request: ChatRequest):
     if len(state["history"]) > 20:
         state["history"] = state["history"][-20:]
         
-    dish_image_url = recipe_data.image_url if recipe_data else None
+    dish_image_url = recipe_data.get('image_url') if isinstance(recipe_data, dict) else getattr(recipe_data, 'image_url', None)
+    if not dish_image_url and state.get("current_recipe_id"):
+        dish_image_url = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
 
     return ChatResponse(
         response=response_text,
